@@ -17,10 +17,7 @@
     "autoload": {
         "psr-4": {
             "Tartan\\IranianSms\\": "src"
-        },
-		"files": [
-			"src/helper/iranianSmsHelper.php"
-		]
+        }
     },
     "autoload-dev": {
         "psr-4": {
