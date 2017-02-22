@@ -1,1 +1,1 @@
-# Laravel SSMS Component
+# Laravel SMS Component
