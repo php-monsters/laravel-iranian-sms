@@ -29,7 +29,7 @@
     },
     "require": {
         "php": ">=5.4",
-        "illuminate/support": "5.x.x",
+        "illuminate/support": "5.x.x"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"
