@@ -27,7 +27,7 @@ class KaveNegar implements AdapterInterface {
 	public function __construct() {
 		$this->gateway_url = config('iranian_sms.kavenegar.gateway');
 		$this->credential['api_key'] = config('iranian_sms.kavenegar.api_key');
-		dd($this);
+		dd( config('iranian_sms.kavenegar.api_url'));
 	}
 
 	public function send(String $number, String $message) {
