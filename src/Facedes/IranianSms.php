@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Support\Facades;
+namespace Tartan\IranianSms\Facades;
 
 /**
  * @see \Illuminate\Cache\CacheManager
