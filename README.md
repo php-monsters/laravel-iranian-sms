@@ -1,10 +1,12 @@
 # Laravel SMS Component
 
 
-## Installation 
-```
-1.composer require iamtartan/laravel-iranian-sms
+## Installation
+
+1.Installing Via composer
 ```bash
+composer require iamtartan/laravel-iranian-sms
+```
 
 2.Add this to your app service providers :
 ```php
