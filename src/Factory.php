@@ -3,6 +3,7 @@
 namespace Tartan\IranianSms;
 
 use Tartan\IranianSms\Adapter\MehrAfzar;
+use Tartan\IranianSms\Adapter\KaveNegar;
 
 class Factory {
 
@@ -15,6 +16,10 @@ class Factory {
 		case 'mehrafzar':
 			# code...
 			return new MehrAfzar();
+			break;
+		case 'kavenegar':
+			# code...
+			return new KaveNegar();
 			break;
 
 		default:
