@@ -3,18 +3,24 @@
 
 ## Installation 
 ```
-composer require iamtartan/laravel-iranian-sms
-```
+1.composer require iamtartan/laravel-iranian-sms
+```bash
 
-Add this to your app service providers :
+2.Add this to your app service providers :
 ```php
     Tartan\IranianSms\SmsServiceProvider::class,
 ```
 
-Add this to your aliases :
+3.Add this to your aliases :
 ```php
     'IranianSms' => Tartan\IranianSms\Facades\IranianSms::class
 ```
+
+4.Publish the config file 
+```bash
+php artisan vendor:publish --tag=config
+```
+
 
 ## Usage Example :
 ```php
