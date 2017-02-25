@@ -2,6 +2,8 @@
 
 namespace Tartan\IranianSms\Facades;
 
+use Illuminate\Support\Facades\Facade;
+
 /**
  * @see \Illuminate\Cache\CacheManager
  * @see \Illuminate\Cache\Repository

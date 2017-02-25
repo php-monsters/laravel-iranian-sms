@@ -1,6 +1,21 @@
 # Laravel SMS Component
 
 
+## Installation 
+```
+composer require iamtartan/laravel-iranian-sms
+```
+
+Add this to your app service providers :
+```php
+    Tartan\IranianSms\SmsServiceProvider::class,
+```
+
+Add this to your aliases :
+```php
+    'IranianSms' => Tartan\IranianSms\Facades\IranianSms::class
+```
+
 ## Usage Example :
 ```php
     //using the default adapter
@@ -8,6 +23,12 @@
 
     //using kavenegar adapter
     resolve('iranian_sms')->make('kavenegar')->send('0912xxxxxxx','test2x');
+
+
+    //using Facede
+    use IranianSms;
+    IranianSms::make()->send('0912xxxxxxx','test2x');
+
 
 ```
 
