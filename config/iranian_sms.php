@@ -8,7 +8,8 @@ return [
 		'password' => env('IRANIANSMS_MEHRAFZAR_PASSWORD','test'),
 	],
 	'kavenegar' => [
-		'gateway' => env('IRANIANSMS_KAVENEGAR_GATEWAY','http://api.kavenegar.com/v1/%s/%s/%s.json/'),
+		'gateway' => 'asdadasd',
+		'api_url' => 'asdadasd',
 		'api_key' => env('IRANIANSMS_KAVENEGAR_APIKEY','test'),
 		'sender' => env('IRANIANSMS_KAVENEGAR_SENDER','test'),
 	]
