@@ -11,7 +11,11 @@ class Factory {
 
 	}
 
-	public function make($adapter) {
+	public function make($adapter ='') {
+
+		if ($adapter == '') {
+			$adapter = config('iranian_sms.default');
+		}
 		switch ($adapter) {
 		case 'mehrafzar':
 			# code...

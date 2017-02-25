@@ -8,6 +8,7 @@ class KaveNegar implements AdapterInterface {
 	private $credential = [
 		'api_key' => '',
 	];
+	public $sender;
 
 	public $debug = false;
 
@@ -27,11 +28,22 @@ class KaveNegar implements AdapterInterface {
 	public function __construct() {
 		$this->gateway_url = config('iranian_sms.kavenegar.gateway');
 		$this->credential['api_key'] = config('iranian_sms.kavenegar.api_key');
-		dd($this);
+		$this->sender = config('iranian_sms.kavenegar.sender');
+
 	}
 
 	public function send(String $number, String $message) {
-
+		$receptor = [$number];
+		$date = null;
+		$type = 1;
+		$localid = null;
+		$result = $this->_send($receptor, $this->sender, $message, $date, $type, $localid);
+		dd($result);
+		if ($result) {
+			$res = array_shift($result);
+			if ($res->messageid > 0)
+				return $res->messageid;
+		}
 		throw new \Exception("SMS cannot be send!");
 	}
 
