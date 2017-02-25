@@ -2,7 +2,7 @@
 
 namespace Tartan\IranianSms\Adapter;
 
-class MehrAfzar implements AdapterInterface {
+class MehrAfzar extends AdapterApstract implements AdapterInterface {
 
 	public $gateway_url;
 	private $credential = [
@@ -31,6 +31,9 @@ class MehrAfzar implements AdapterInterface {
 	}
 
 	public function send(String $number,String $message) {
+
+		$number = $this->filterNumber($number);
+
 		$parameters = array(
 			'cUserName' => $this->credential['username'],
 			'cPassword' => $this->credential['password'],

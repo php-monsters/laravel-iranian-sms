@@ -2,7 +2,7 @@
 
 namespace Tartan\IranianSms\Adapter;
 
-class KaveNegar implements AdapterInterface {
+class KaveNegar extends AdapterApstract implements AdapterInterface {
 
 	public $gateway_url;
 	private $credential = [
@@ -32,6 +32,9 @@ class KaveNegar implements AdapterInterface {
 	}
 
 	public function send(String $number, String $message) {
+
+		$number = $this->filterNumber($number);
+
 		$receptor = [$number];
 		$date = null;
 		$type = 1;
