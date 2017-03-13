@@ -1,9 +1,9 @@
 <?php
 
-namespace Tartan\IranianSms;
+namespace Keraken\Iraniansms;
 
 use Illuminate\Support\ServiceProvider;
-use Tartan\IranianSms\Factory;
+use Keraken\Iraniansms\Factory;
 class SmsServiceProvider extends ServiceProvider
 {
     /**
@@ -23,7 +23,7 @@ class SmsServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->app->singleton('iranian_sms', function ($app) {
+        $this->app->singleton('iraniansms', function ($app) {
             return new Factory($app);
         });
     }

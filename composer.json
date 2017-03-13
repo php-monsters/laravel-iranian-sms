@@ -1,5 +1,5 @@
 {
-    "name": "iamtartan/laravel-iranian-sms",
+    "name": "keraken/laravel-iranian-sms",
     "description": "Laravel 5.x sms handler for working with most iranian sms operators",
     "keywords": ["laravel", "sms", "iran-sm", "iranian-sms", "magfa", "adp", "kave-negar", "mehr-afraz"],
     "type": "laravel-component",
@@ -16,12 +16,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Tartan\\IranianSms\\": "src"
+            "Keraken\\Iraniansms\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tartan\\IranianSms\\Tests\\": "tests"
+            "Keraken\\Iraniansms\\Tests\\": "tests"
         }
     },
     "require": {

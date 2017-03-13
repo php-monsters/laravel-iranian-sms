@@ -5,17 +5,17 @@
 
 1.Installing Via composer
 ```bash
-composer require iamtartan/laravel-iranian-sms
+composer require keraken/laravel-iranian-sms
 ```
 
 2.Add this to your app service providers :
 ```php
-    Tartan\IranianSms\SmsServiceProvider::class,
+    Keraken\IranianSms\SmsServiceProvider::class,
 ```
 
 3.Add this to your aliases :
 ```php
-    'IranianSms' => Tartan\IranianSms\Facades\IranianSms::class
+    'IranianSms' => Keraken\IranianSms\Facades\IranianSms::class
 ```
 
 4.Publish the config file 
@@ -27,15 +27,15 @@ php artisan vendor:publish --tag=config
 ## Usage Example :
 ```php
     //using the default adapter
-    resolve('iranian_sms')->make()->send('0912xxxxxxx','test2x');
+    resolve('iraniansms')->make()->send('0912xxxxxxx','test2x');
 
     //using kavenegar adapter
-    resolve('iranian_sms')->make('kavenegar')->send('0912xxxxxxx','test2x');
+    resolve('iraniansms')->make('kavenegar')->send('0912xxxxxxx','test2x');
 
 
     //using Facede
-    use IranianSms;
-    IranianSms::make()->send('0912xxxxxxx','test2x');
+    use Iraniansms;
+    Iraniansms::make()->send('0912xxxxxxx','test2x');
 
 
 ```

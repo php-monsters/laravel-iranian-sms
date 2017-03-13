@@ -1,6 +1,6 @@
 <?php
 
-namespace Tartan\IranianSms\Adapter;
+namespace Keraken\Iraniansms\Adapter;
 
 class MehrAfzar extends AdapterApstract implements AdapterInterface {
 

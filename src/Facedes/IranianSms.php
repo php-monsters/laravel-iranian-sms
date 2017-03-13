@@ -1,6 +1,6 @@
 <?php
 
-namespace Tartan\IranianSms\Facades;
+namespace Keraken\Iraniansms\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -17,6 +17,6 @@ class IranianSms extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'iranian_sms';
+        return 'iraniansms';
     }
 }
