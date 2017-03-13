@@ -1,8 +1,8 @@
 <?php
 
-namespace Keraken\Iraniansms\Adapter;
+namespace Keraken\IranianSms\Adapter;
 
-class KaveNegar extends AdapterApstract implements AdapterInterface {
+class KaveNegar extends AdapterAbstract implements AdapterInterface {
 
 	public $gateway_url;
 	private $credential = [

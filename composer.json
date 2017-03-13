@@ -16,12 +16,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Keraken\\Iraniansms\\": "src"
+            "Keraken\\IranianSms\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Keraken\\Iraniansms\\Tests\\": "tests"
+            "Keraken\\IranianSms\\Tests\\": "tests"
         }
     },
     "require": {

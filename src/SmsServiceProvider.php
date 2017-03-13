@@ -1,9 +1,9 @@
 <?php
 
-namespace Keraken\Iraniansms;
+namespace Keraken\IranianSms;
 
 use Illuminate\Support\ServiceProvider;
-use Keraken\Iraniansms\Factory;
+
 class SmsServiceProvider extends ServiceProvider
 {
     /**
@@ -11,10 +11,9 @@ class SmsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
         $this->publishes([
-        __DIR__.'/../config/iranian_sms.php' => config_path('iranian_sms.php')
-            ], 'config');
+            __DIR__.'/../config/iranian_sms.php' => config_path('iranian_sms.php')
+        ], 'config');
     }
 
     /**
@@ -24,7 +23,7 @@ class SmsServiceProvider extends ServiceProvider
     {
 
         $this->app->singleton('iraniansms', function ($app) {
-            return new Factory($app);
+            return new \Keraken\IranianSms\Factory($app);
         });
     }
 }

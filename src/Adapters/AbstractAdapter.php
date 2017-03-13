@@ -1,10 +1,10 @@
 <?php
 
-namespace Keraken\Iraniansms\Adapter;
+namespace Keraken\IranianSms\Adapter;
 
 use Exception;
 
-abstract class AdapterApstract {
+abstract class AdapterAbstract {
 
 	public function filterNumber(String $number) {
 
