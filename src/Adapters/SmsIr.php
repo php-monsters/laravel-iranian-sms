@@ -1,6 +1,6 @@
 <?php
 
-namespace Keraken\IranianSms\Adapter;
+namespace Tartan\IranianSms\Adapter;
 
 class SmsIr extends AdapterAbstract implements AdapterInterface
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Keraken\IranianSms\Facades;
+namespace Tartan\IranianSms\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Keraken\IranianSms;
+namespace Tartan\IranianSms;
 
-use Keraken\IranianSms\Adapter\MehrAfzar;
-use Keraken\IranianSms\Adapter\KaveNegar;
-use Keraken\IranianSms\Adapter\SmsIr;
+use Tartan\IranianSms\Adapter\MehrAfzar;
+use Tartan\IranianSms\Adapter\KaveNegar;
+use Tartan\IranianSms\Adapter\SmsIr;
 
 class Factory
 {
