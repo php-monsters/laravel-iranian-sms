@@ -1,5 +1,5 @@
 {
-    "name": "iamtartan/laravel-iranian-sms",
+    "name": "tartan/laravel-iranian-sms",
     "description": "Laravel 5.x sms handler for working with most iranian sms operators",
     "keywords": ["laravel", "sms", "iran-sm", "iranian-sms", "magfa", "adp", "kave-negar", "mehr-afraz"],
     "type": "laravel-component",
