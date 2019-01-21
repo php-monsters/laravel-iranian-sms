@@ -18,5 +18,8 @@ return [
         'user' => env('IRANIANSMS_SMSIR_USER', 'test'),
         'pass'  => env('IRANIANSMS_SMSIR_PASS', 'test'),
         'lineNo'  => env('IRANIANSMS_SMSIR_LINENO', 'test'),
+    ],
+    'slack' => [
+        'url' => env('IRANIANSMS_SLACK_URL')
     ]
 ];

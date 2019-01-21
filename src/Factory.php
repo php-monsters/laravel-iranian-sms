@@ -4,6 +4,7 @@ namespace Tartan\IranianSms;
 
 use Tartan\IranianSms\Adapter\MehrAfzar;
 use Tartan\IranianSms\Adapter\KaveNegar;
+use Tartan\IranianSms\Adapter\Slack;
 use Tartan\IranianSms\Adapter\SmsIr;
 use Tartan\IranianSms\Adapter\SmsLog;
 
@@ -37,6 +38,10 @@ class Factory
             case 'log':
                 # code...
                 return new SmsLog();
+                break;
+            case 'slack':
+                # code...
+                return new Slack();
                 break;
 
             default:
