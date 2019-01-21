@@ -23,7 +23,10 @@ class Slack extends AdapterAbstract implements AdapterInterface
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HEADER, array('Content-Type: application/json'));
         $data = curl_exec($ch);
-        curl_close($ch);
+
+        if(curl_errno($ch)){
+            throw new Exception(curl_error($ch));
+        }
 
         return $data;
     }
