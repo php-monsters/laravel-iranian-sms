@@ -4,7 +4,9 @@ namespace Tartan\IranianSms;
 
 use Tartan\IranianSms\Adapter\MehrAfzar;
 use Tartan\IranianSms\Adapter\KaveNegar;
+use Tartan\IranianSms\Adapter\Slack;
 use Tartan\IranianSms\Adapter\SmsIr;
+use Tartan\IranianSms\Adapter\SmsLog;
 
 class Factory
 {
@@ -22,20 +24,22 @@ class Factory
         }
         switch ($adapter) {
             case 'mehrafzar':
-                # code...
                 return new MehrAfzar();
                 break;
             case 'kavenegar':
-                # code...
                 return new KaveNegar();
                 break;
             case 'smsir':
-                # code...
                 return new SmsIr();
                 break;
-
+            case 'log':
+                return new SmsLog();
+                break;
+            case 'slack':
+                return new Slack();
+                break;
             default:
-                # code...
+                throw new Exception('Adapter not defined');
                 break;
         }
     }
