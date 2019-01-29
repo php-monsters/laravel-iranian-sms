@@ -2,7 +2,7 @@
 
 return [
     //Default SMS gateway
-    'default'   => env('IRANIANSMS_DEFAULT', 'mehrafzar'),
+    'default'   => env('IRANIANSMS_DEFAULT', 'log'), // laravel built in log
     'mehrafzar' => [
         'gateway'  => env('IRANIANSMS_MEHRAFZAR_GATEWAY', 'http://mehrafraz.com/webservice/Service.asmx?WSDL'),
         'username' => env('IRANIANSMS_MEHRAFZAR_USERNAME', 'test'),
@@ -17,7 +17,7 @@ return [
         'gateway' => env('IRANIANSMS_SMSIR_GATEWAY', 'http://ip.sms.ir/SendMessage.ashx'),
         'user' => env('IRANIANSMS_SMSIR_USER', 'test'),
         'pass'  => env('IRANIANSMS_SMSIR_PASS', 'test'),
-        'lineNo'  => env('IRANIANSMS_SMSIR_LINENO', 'test'),
+        'line_no'  => env('IRANIANSMS_SMSIR_LINENO', 'test'),
     ],
     'slack' => [
         'url' => env('IRANIANSMS_SLACK_URL')

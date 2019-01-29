@@ -40,6 +40,8 @@ php artisan vendor:publish --tag=config
 
 
 ### available adapters
+* log (no charge adapter for development purposes)
+* slack (no charge adapter for development and staging environment)
 * mehrafzar مهر افزار
 * kavenegar کاوه نگار
 * smsir اسمس آی آر
@@ -68,7 +70,7 @@ return [
             'gateway' => env('IRANIANSMS_SMSIR_GATEWAY', 'http://ip.sms.ir/SendMessage.ashx'),
             'user' => env('IRANIANSMS_SMSIR_USER', 'test'),
             'pass'  => env('IRANIANSMS_SMSIR_PASS', 'test'),
-            'lineNo'  => env('IRANIANSMS_SMSIR_LINENO', 'test'),
+            'line_no'  => env('IRANIANSMS_SMSIR_LINENO', 'test'),
     ]
 ];
 ```
