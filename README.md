@@ -20,7 +20,7 @@ composer require tartan/laravel-iranian-sms
 
 4.Publish the config file 
 ```bash
-php artisan vendor:publish --tag=config
+php artisan vendor:publish --provider="Tartan\IranianSms\SmsServiceProvider" --tag=config
 ```
 
 
