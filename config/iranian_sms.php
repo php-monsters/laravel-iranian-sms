@@ -19,6 +19,10 @@ return [
         'pass'  => env('IRANIANSMS_SMSIR_PASS', 'test'),
         'line_no'  => env('IRANIANSMS_SMSIR_LINENO', 'test'),
     ],
+    'ghasedak'=> [
+        'api_key' => env('IRANIANSMS_GHASEDAK_APIKEY', 'test'),
+        'sender'  => env('IRANIANSMS_GHASEDAK_SENDER', 'test'),
+    ],
     'slack' => [
         'url' => env('IRANIANSMS_SLACK_URL')
     ]

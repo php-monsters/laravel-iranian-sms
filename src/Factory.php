@@ -2,6 +2,7 @@
 
 namespace Tartan\IranianSms;
 
+use Tartan\IranianSms\Adapter\Ghasedak;
 use Tartan\IranianSms\Adapter\MehrAfzar;
 use Tartan\IranianSms\Adapter\KaveNegar;
 use Tartan\IranianSms\Adapter\Slack;
@@ -38,10 +39,14 @@ class Factory
             case 'slack':
                 return new Slack();
                 break;
+            case 'ghasedak':
+                return new Ghasedak();
+                break;
             default:
                 throw new Exception('Adapter not defined');
                 break;
         }
+
     }
 }
 

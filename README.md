@@ -45,6 +45,7 @@ php artisan vendor:publish --provider="Tartan\IranianSms\SmsServiceProvider" --t
 * mehrafzar مهر افزار
 * kavenegar کاوه نگار
 * smsir اسمس آی آر
+* ghasedak قاصدک
 
 
 
@@ -71,6 +72,10 @@ return [
             'user' => env('IRANIANSMS_SMSIR_USER', 'test'),
             'pass'  => env('IRANIANSMS_SMSIR_PASS', 'test'),
             'line_no'  => env('IRANIANSMS_SMSIR_LINENO', 'test'),
-    ]
+    ],
+    'ghasedak'=> [
+        'api_key' => env('IRANIANSMS_GHASEDAK_APIKEY', 'test'),
+        'sender'  => env('IRANIANSMS_GHASEDAK_SENDER', 'test'),
+    ],
 ];
 ```
