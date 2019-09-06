@@ -1,5 +1,5 @@
 # Laravel SMS Component
-
+Laravel Package for dealing with Iranian SMS prodivers working with Laravel 5 & 6 
 
 ## Installation
 

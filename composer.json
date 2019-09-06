@@ -26,7 +26,7 @@
     },
     "require": {
         "php": ">=5.4",
-        "illuminate/support": "5.x.x",
+        "illuminate/support": ">=5.0.0",
         "ext-soap": "*",
         "ext-curl": "*",
         "ghasedak/php":"dev-master"
