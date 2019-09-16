@@ -5,7 +5,6 @@ namespace Tartan\IranianSms\Adapter;
 use Kavenegar\KavenegarApi;
 use Kavenegar\Exceptions\ApiException;
 use Kavenegar\Exceptions\HttpException;
-use phpDocumentor\Reflection\Types\String_;
 
 class KaveNegar extends AdapterAbstract implements AdapterInterface {
 
@@ -41,16 +40,16 @@ class KaveNegar extends AdapterAbstract implements AdapterInterface {
             $api = $this->api;
             $result = $api->Send($this->sender,$number,$message);
             if($result){
-                return var_dump($result);
+                var_dump($result);
             }
         }
         catch(ApiException $e){
             // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
-            return $e->errorMessage();
+            echo $e->errorMessage();
         }
         catch(HttpException $e){
             // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
-            return $e->errorMessage();
+            echo $e->errorMessage();
         }
 	}
 
