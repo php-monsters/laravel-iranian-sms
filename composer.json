@@ -29,7 +29,8 @@
         "illuminate/support": ">=5.0.0",
         "ext-soap": "*",
         "ext-curl": "*",
-        "ghasedak/php":"dev-master"
+        "ghasedak/php":"dev-master",
+        "kavenegar/php": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0"
