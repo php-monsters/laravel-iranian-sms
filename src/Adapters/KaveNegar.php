@@ -55,6 +55,8 @@ class KaveNegar extends AdapterAbstract implements AdapterInterface {
 
     public function verifyLookup(String $number, String $token, String $template)
     {
+        $number = $this->filterNumber($number);
+
         try{
             $api = $this->api;
             $result = $api->VerifyLookup($number,$token,$token2 = '',$token3 = '',$template,$type = null);

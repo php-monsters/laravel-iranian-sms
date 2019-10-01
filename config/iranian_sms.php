@@ -25,5 +25,10 @@ return [
     ],
     'slack' => [
         'url' => env('IRANIANSMS_SLACK_URL')
+    ],
+    'parsasms' => [
+        'gateway' => env('IRANIANSMS_PARSASMS_GATEWAY','http://api.parsasms.com/v2/sms/send/simple'),
+        'api_key' => env('IRANIANSMS_PARSASMS_APIKEY','test'),
+        'sender' => env('IRANIANSMS_PARSASMS_SENDER','test')
     ]
 ];
