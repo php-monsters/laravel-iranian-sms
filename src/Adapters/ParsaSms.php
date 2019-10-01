@@ -3,6 +3,7 @@
 namespace Tartan\IranianSms\Adapter;
 
 use Ghasedak\GhasedakApi;
+use Exception;
 
 class ParsaSms extends AdapterAbstract implements AdapterInterface
 {
@@ -41,7 +42,13 @@ class ParsaSms extends AdapterAbstract implements AdapterInterface
 
         $response = curl_exec($curl);
         curl_close($curl);
-        
+
+        $response_array = json_decode($response,TRUE);
+
+        if (!(isset($response_array['result']) && $response_array['result'] == 'success')){
+            throw new Exception("Error: ".$response);
+        }
+
         return $response;
     }
 }
