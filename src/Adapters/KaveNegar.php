@@ -36,39 +36,19 @@ class KaveNegar extends AdapterAbstract implements AdapterInterface {
 	public function send(String $number, String $message) {
 		$number = $this->filterNumber($number);
 
-        try{
-            $api = $this->api;
-            $result = $api->Send($this->sender,$number,$message);
-            if($result){
-                var_dump($result);
-            }
-        }
-        catch(ApiException $e){
-            // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
-            echo $e->errorMessage();
-        }
-        catch(HttpException $e){
-            // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
-            echo $e->errorMessage();
-        }
+        $api = $this->api;
+        $result = $api->Send($this->sender,$number,$message);
+
+        return $result[0]->messageid;
 	}
 
     public function verifyLookup(String $number, String $token, String $template)
     {
         $number = $this->filterNumber($number);
 
-        try{
-            $api = $this->api;
-            $result = $api->VerifyLookup($number,$token,$token2 = '',$token3 = '',$template,$type = null);
-            if($result){
-                var_dump($result);
-            }
-        }
-        catch(ApiException $e){
-            echo $e->errorMessage();
-        }
-        catch(HttpException $e){
-            echo $e->errorMessage();
-        }
+        $api = $this->api;
+        $result = $api->VerifyLookup($number,$token,$token2 = '',$token3 = '',$template,$type = null);
+
+        return $result[0]->messageid;
 	}
 }
