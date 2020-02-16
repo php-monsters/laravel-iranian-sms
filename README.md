@@ -56,7 +56,7 @@ php artisan vendor:publish --provider="Tartan\IranianSms\SmsServiceProvider" --t
 
 return [
 	//Default SMS gateway
-	'default' => env('IRANIANSMS_DEFAULT','mehrafraz'),
+	'default' => env('IRANIANSMS_DEFAULT','log'),
 	'mehrafraz' => [
 		'gateway' => env('IRANIANSMS_MEHRAFRAZ_GATEWAY','http://mehrafraz.com/webservice/Service.asmx?WSDL'),
 		'username' => env('IRANIANSMS_MEHRAFRAZ_USERNAME','test'),
@@ -68,14 +68,14 @@ return [
 		'sender' => env('IRANIANSMS_KAVENEGAR_SENDER','test'),
 	],
 	'smsir' => [
-            'gateway' => env('IRANIANSMS_SMSIR_GATEWAY', 'http://ip.sms.ir/SendMessage.ashx'),
-            'user' => env('IRANIANSMS_SMSIR_USER', 'test'),
-            'pass'  => env('IRANIANSMS_SMSIR_PASS', 'test'),
-            'line_no'  => env('IRANIANSMS_SMSIR_LINENO', 'test'),
-    ],
-    'ghasedak'=> [
-        'api_key' => env('IRANIANSMS_GHASEDAK_APIKEY', 'test'),
-        'sender'  => env('IRANIANSMS_GHASEDAK_SENDER', 'test'),
-    ],
+		'gateway' => env('IRANIANSMS_SMSIR_GATEWAY', 'http://ip.sms.ir/SendMessage.ashx'),
+		'user' => env('IRANIANSMS_SMSIR_USER', 'test'),
+		'pass'  => env('IRANIANSMS_SMSIR_PASS', 'test'),
+		'line_no'  => env('IRANIANSMS_SMSIR_LINENO', 'test'),
+	],
+	'ghasedak'=> [
+		'api_key' => env('IRANIANSMS_GHASEDAK_APIKEY', 'test'),
+		'sender'  => env('IRANIANSMS_GHASEDAK_SENDER', 'test'),
+	],
 ];
 ```
