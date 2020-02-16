@@ -6,7 +6,6 @@ use Ghasedak\GhasedakApi;
 
 class Ghasedak extends AdapterAbstract implements AdapterInterface
 {
-
     private $credential = [
         'api_key'   => '',
         'sender'   => ''
@@ -20,7 +19,6 @@ class Ghasedak extends AdapterAbstract implements AdapterInterface
 
     public function send(String $number, String $message)
     {
-
         $number = $this->filterNumber($number);
 
         $api = new GhasedakApi($this->credential['api_key']);
@@ -30,6 +28,5 @@ class Ghasedak extends AdapterAbstract implements AdapterInterface
             $message,
             $this->credential['sender']
         );
-
     }
 }

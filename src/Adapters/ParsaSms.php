@@ -7,7 +7,6 @@ use Exception;
 
 class ParsaSms extends AdapterAbstract implements AdapterInterface
 {
-
     private $credential = [
         'gateway'   => '',
         'api_key'   => '',
