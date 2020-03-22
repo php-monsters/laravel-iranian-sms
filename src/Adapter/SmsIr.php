@@ -21,7 +21,7 @@ class SmsIr extends AdapterAbstract implements AdapterInterface
         $this->credential['lineNo'] = config('iranian_sms.smsir.line_no');
     }
 
-    public function send(String $number, String $message)
+    public function send(string $number, string $message)
     {
 
         $number = $this->filterNumber($number);

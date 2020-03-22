@@ -11,7 +11,7 @@ class Slack extends AdapterAbstract implements AdapterInterface
         $this->url = config('iranian_sms.slack.url');
     }
 
-    public function send(String $number, String $message)
+    public function send(string $number, string $message)
     {
         $number = $this->filterNumber($number);
 

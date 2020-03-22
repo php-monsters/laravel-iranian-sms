@@ -1,17 +1,13 @@
 {
     "name": "tartan/laravel-iranian-sms",
     "description": "Laravel 5.x sms handler for working with most iranian sms operators",
-    "keywords": ["laravel", "sms", "iran-sm", "iranian-sms", "magfa", "adp", "kave-negar", "mehr-afraz"],
+    "keywords": ["laravel", "sms", "iran-sm", "iranian-sms", "magfa", "adp", "kave-negar", "mehr-afraz", "ghasedak"],
     "type": "laravel-component",
     "license": "MIT",
     "authors": [
         {
             "name": "Aboozar Ghaffari <Tartan>",
             "email": "iamtartan@gmail.com"
-        },
-        {
-            "name": "Sina Miandashti",
-            "email": "miandashti@gmail.com"
         }
     ],
     "autoload": {
@@ -19,19 +15,12 @@
             "Tartan\\IranianSms\\": "src"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Tartan\\IranianSms\\Tests\\": "tests"
-        }
-    },
     "require": {
         "php": ">=5.4",
-        "illuminate/support": ">=5.0.0",
         "ext-soap": "*",
         "ext-curl": "*",
+        "ext-json": "*",
+        "illuminate/support": ">=5.0.0",
         "ghasedak/php":"dev-master"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "~4.0"
     }
 }

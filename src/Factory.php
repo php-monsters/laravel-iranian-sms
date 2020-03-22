@@ -11,12 +11,6 @@ use Tartan\IranianSms\Adapter\SmsLog;
 
 class Factory
 {
-
-    function __construct($app)
-    {
-
-    }
-
     public function make($adapter = '')
     {
 

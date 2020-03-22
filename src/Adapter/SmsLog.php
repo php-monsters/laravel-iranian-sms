@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Log;
 
 class SmsLog extends AdapterAbstract implements AdapterInterface
 {
-    public function send(String $number, String $message)
+    public function send(string $number, string $message)
     {
         $number    = $this->filterNumber($number);
         $contents  = "To: {$number} ".PHP_EOL;

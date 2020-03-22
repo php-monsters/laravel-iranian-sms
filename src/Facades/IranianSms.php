@@ -5,8 +5,8 @@ namespace Tartan\IranianSms\Facades;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Illuminate\Cache\CacheManager
- * @see \Illuminate\Cache\Repository
+ * Class IranianSms
+ * @package Tartan\IranianSms\Facades
  */
 class IranianSms extends Facade
 {

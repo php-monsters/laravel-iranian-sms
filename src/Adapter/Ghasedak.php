@@ -18,7 +18,7 @@ class Ghasedak extends AdapterAbstract implements AdapterInterface
         $this->credential['sender'] = config('iranian_sms.ghasedak.sender');
     }
 
-    public function send(String $number, String $message)
+    public function send(string $number, string $message)
     {
 
         $number = $this->filterNumber($number);
