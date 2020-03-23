@@ -4,14 +4,13 @@ namespace Tartan\IranianSms\Adapter;
 
 class SmsIr extends AdapterAbstract implements AdapterInterface
 {
-
     public  $gateway_url;
+
     private $credential = [
         'user'   => '',
         'pass'   => '',
         'lineNo' => '',
     ];
-
 
     public function __construct()
     {
@@ -23,7 +22,6 @@ class SmsIr extends AdapterAbstract implements AdapterInterface
 
     public function send(string $number, string $message)
     {
-
         $number = $this->filterNumber($number);
 
         $propertiesObject = [
@@ -34,7 +32,7 @@ class SmsIr extends AdapterAbstract implements AdapterInterface
             'text'   => $message,
         ];
 
-        $ch = curl_init($this->gateway_url . '?' . http_build_query($propertiesObject)); // such as http://example.com/example.xml
+        $ch = curl_init($this->gateway_url . '?' . http_build_query($propertiesObject)); // e.g. http://example.com/example.xml
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HEADER, 0);
         $data = curl_exec($ch);

@@ -11,6 +11,7 @@ use Tartan\IranianSms\Adapter\SmsLog;
 
 class Factory
 {
+
     public function make($adapter = '')
     {
 
@@ -18,8 +19,8 @@ class Factory
             $adapter = config('iranian_sms.default');
         }
         switch ($adapter) {
-            case 'mehrafzar':
-                return new MehrAfzar();
+            case 'mehrafraz':
+                return new MehrAfraz();
                 break;
             case 'kavenegar':
                 return new KaveNegar();
