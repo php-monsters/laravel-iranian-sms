@@ -17,10 +17,10 @@
     },
     "require": {
         "php": ">=5.4",
-        "illuminate/support": ">=5.0.0",
         "ext-soap": "*",
         "ext-curl": "*",
-	"ext-json": "*",
+        "ext-json": "*",
+        "illuminate/support": ">=5.0.0",
         "ghasedak/php":"dev-master",
         "kavenegar/php": "*"
     }
