@@ -32,6 +32,10 @@ return [
         'url' => env('IRANIANSMS_SLACK_URL')
     ],
 
+    'discord' => [
+        'url' => env('IRANIANSMS_DISCORD_URL')
+    ],
+
     'parsasms' => [
         'gateway' => env('IRANIANSMS_PARSASMS_GATEWAY','http://api.parsasms.com/v2/sms/send/simple'),
         'api_key' => env('IRANIANSMS_PARSASMS_APIKEY','test'),
