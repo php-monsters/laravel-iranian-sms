@@ -3,7 +3,7 @@
 namespace Tartan\IranianSms\Adapter;
 
 use Ghasedak\GhasedakApi;
-use Exception;
+use Tartan\IranianSms\Exception;
 
 class ParsaSms extends AdapterAbstract implements AdapterInterface
 {

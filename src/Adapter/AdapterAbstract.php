@@ -2,7 +2,7 @@
 
 namespace Tartan\IranianSms\Adapter;
 
-use Exception;
+use Tartan\IranianSms\Exception;
 
 abstract class AdapterAbstract {
 

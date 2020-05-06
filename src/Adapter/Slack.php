@@ -2,6 +2,8 @@
 
 namespace Tartan\IranianSms\Adapter;
 
+use Tartan\IranianSms\Exception;
+
 class Slack extends AdapterAbstract implements AdapterInterface
 {
     public $url;
