@@ -1,5 +1,5 @@
 # Laravel SMS Component
-Laravel Package for dealing with Iranian SMS prodivers working with Laravel 5 & 6
+Laravel Package for dealing with Iranian SMS providers working with Laravel 5+
 
 ## Installation
 
@@ -27,25 +27,27 @@ php artisan vendor:publish --provider="Tartan\IranianSms\SmsServiceProvider" --t
 ## Usage Example :
 ```php
     //using the default adapter
-    resolve('iraniansms')->make()->send('0912xxxxxxx','test2x');
+    resolve('iraniansms')->make()->send('0912xxxxxxx','this is test message');
 
     //using kavenegar adapter
-    resolve('iraniansms')->make('kavenegar')->send('0912xxxxxxx','test2x');
+    resolve('iraniansms')->make('kavenegar')->send('0912xxxxxxx','this is test message');
 
 
     //using Facede
     use Iraniansms;
-    Iraniansms::make()->send('0912xxxxxxx','test2x');
+    Iraniansms::make()->send('0912xxxxxxx','this is test message');
 ```
 
 
 ### available adapters
 * log (no charge adapter for development purposes)
 * slack (no charge adapter for development and staging environment)
+* discord (no charge adapter for development and staging environment)
 * mehrafraz مهر افراز
 * kavenegar کاوه نگار
 * smsir اسمس آی آر
 * ghasedak قاصدک
+* parsasms پارسا اسمس
 
 
 
@@ -59,24 +61,30 @@ return [
 	'default' => env('IRANIANSMS_DEFAULT','log'),
 	'mehrafraz' => [
 		'gateway' => env('IRANIANSMS_MEHRAFRAZ_GATEWAY','http://mehrafraz.com/webservice/Service.asmx?WSDL'),
-		'username' => env('IRANIANSMS_MEHRAFRAZ_USERNAME','test'),
-		'password' => env('IRANIANSMS_MEHRAFRAZ_PASSWORD','test'),
+		'username' => env('IRANIANSMS_MEHRAFRAZ_USERNAME'),
+		'password' => env('IRANIANSMS_MEHRAFRAZ_PASSWORD'),
 	],
 	'kavenegar' => [
 		'gateway' => env('IRANIANSMS_KAVENEGAR_GATEWAY','http://api.kavenegar.com/v1/%s/%s/%s.json/'),
-		'api_key' => env('IRANIANSMS_KAVENEGAR_APIKEY','test'),
-		'sender' => env('IRANIANSMS_KAVENEGAR_SENDER','test'),
+		'api_key' => env('IRANIANSMS_KAVENEGAR_APIKEY'),
+		'sender' => env('IRANIANSMS_KAVENEGAR_SENDER'),
 	],
 	'smsir' => [
 		'gateway' => env('IRANIANSMS_SMSIR_GATEWAY', 'http://ip.sms.ir/SendMessage.ashx'),
-		'user' => env('IRANIANSMS_SMSIR_USER', 'test'),
-		'pass'  => env('IRANIANSMS_SMSIR_PASS', 'test'),
-		'line_no'  => env('IRANIANSMS_SMSIR_LINENO', 'test'),
+		'user' => env('IRANIANSMS_SMSIR_USER'),
+		'pass'  => env('IRANIANSMS_SMSIR_PASS'),
+		'line_no'  => env('IRANIANSMS_SMSIR_LINENO'),
 	],
 	'ghasedak'=> [
-		'api_key' => env('IRANIANSMS_GHASEDAK_APIKEY', 'test'),
-		'sender'  => env('IRANIANSMS_GHASEDAK_SENDER', 'test'),
+		'api_key' => env('IRANIANSMS_GHASEDAK_APIKEY'),
+		'sender'  => env('IRANIANSMS_GHASEDAK_SENDER'),
 	],
+
+    'parsasms' => [
+        'gateway' => env('IRANIANSMS_PARSASMS_GATEWAY','http://api.parsasms.com/v2/sms/send/simple'),
+        'api_key' => env('IRANIANSMS_PARSASMS_APIKEY'),
+        'sender' => env('IRANIANSMS_PARSASMS_SENDER')
+    ],
 
     'slack' => [
         'url' => env('IRANIANSMS_SLACK_URL')
@@ -85,11 +93,5 @@ return [
     'discord' => [
         'url' => env('IRANIANSMS_DISCORD_URL')
     ],
-
-    'parsasms' => [
-        'gateway' => env('IRANIANSMS_PARSASMS_GATEWAY','http://api.parsasms.com/v2/sms/send/simple'),
-        'api_key' => env('IRANIANSMS_PARSASMS_APIKEY','test'),
-        'sender' => env('IRANIANSMS_PARSASMS_SENDER','test')
-    ]
 ];
 ```
