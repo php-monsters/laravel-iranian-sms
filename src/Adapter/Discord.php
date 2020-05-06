@@ -2,22 +2,20 @@
 
 namespace Tartan\IranianSms\Adapter;
 
-use Tartan\IranianSms\Exception;
-
-class Slack extends AdapterAbstract implements AdapterInterface
+class Discord extends AdapterAbstract implements AdapterInterface
 {
     public $url;
 
     public function __construct()
     {
-        $this->url = config('iranian_sms.slack.url');
+        $this->url = config('iranian_sms.discord.url');
     }
 
     public function send(string $number, string $message)
     {
         $number = $this->filterNumber($number);
 
-        $data = json_encode(['content' => "To: $number - Message: $message"]);
+        $data = json_encode(['text' => "To: $number - Message: $message"]);
 
         $ch = curl_init($this->url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
