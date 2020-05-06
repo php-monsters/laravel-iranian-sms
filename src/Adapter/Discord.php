@@ -15,7 +15,7 @@ class Discord extends AdapterAbstract implements AdapterInterface
     {
         $number = $this->filterNumber($number);
 
-        $data = json_encode(['text' => "To: $number - Message: $message"]);
+        $data = json_encode(['content' => "To: $number - Message: $message"]);
 
         $ch = curl_init($this->url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
