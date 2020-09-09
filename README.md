@@ -1,6 +1,6 @@
 # Laravel SMS Component
 Laravel Package for dealing with Iranian SMS providers working with Laravel 5+
-support multiple config for providers
+Support multiple config for each provider
 
 ## Installation
 
