@@ -12,12 +12,19 @@ class SmsIr extends AdapterAbstract implements AdapterInterface
         'lineNo' => '',
     ];
 
-    public function __construct()
+    public function __construct($account = null)
     {
-        $this->gateway_url          = config('iranian_sms.smsir.gateway');
-        $this->credential['user']   = config('iranian_sms.smsir.user');
-        $this->credential['pass']   = config('iranian_sms.smsir.pass');
-        $this->credential['lineNo'] = config('iranian_sms.smsir.line_no');
+        if (is_null($account)) {
+            $this->gateway_url          = config('iranian_sms.smsir.gateway');
+            $this->credential['user']   = config('iranian_sms.smsir.user');
+            $this->credential['pass']   = config('iranian_sms.smsir.pass');
+            $this->credential['lineNo'] = config('iranian_sms.smsir.line_no');
+        } else {
+            $this->gateway_url          = config("iranian_sms.smsir.{$account}.gateway");
+            $this->credential['user']   = config("iranian_sms.smsir.{$account}.user");
+            $this->credential['pass']   = config("iranian_sms.smsir.{$account}.pass");
+            $this->credential['lineNo'] = config("iranian_sms.smsir.{$account}.line_no");
+        }
     }
 
     public function send(string $number, string $message)

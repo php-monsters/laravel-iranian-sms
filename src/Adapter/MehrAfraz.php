@@ -29,11 +29,17 @@ class MehrAfraz extends AdapterAbstract implements AdapterInterface
         16 => 'BTS_ERROR',
     ];
 
-    public function __construct()
+    public function __construct($account = null)
     {
-        $this->gateway_url            = config('iranian_sms.mehrafraz.gateway');
-        $this->credential['username'] = config('iranian_sms.mehrafraz.username');
-        $this->credential['password'] = config('iranian_sms.mehrafraz.password');
+        if (is_null($account)) {
+            $this->gateway_url            = config('iranian_sms.mehrafraz.gateway');
+            $this->credential['username'] = config('iranian_sms.mehrafraz.username');
+            $this->credential['password'] = config('iranian_sms.mehrafraz.password');
+        } else {
+            $this->gateway_url            = config("iranian_sms.mehrafraz.{$account}.gateway");
+            $this->credential['username'] = config("iranian_sms.mehrafraz.{$account}.username");
+            $this->credential['password'] = config("iranian_sms.mehrafraz.{$account}.password");
+        }
     }
 
     public function send(String $number, String $message)
