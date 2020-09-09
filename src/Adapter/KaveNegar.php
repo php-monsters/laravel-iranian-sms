@@ -26,11 +26,17 @@ class KaveNegar extends AdapterAbstract implements AdapterInterface
         100 => 'UNKNOWN_DESTINATION',
     ];
 
-    public function __construct()
+    public function __construct($account = null)
     {
-        $this->gateway_url           = config('iranian_sms.kavenegar.gateway');
-        $this->credential['api_key'] = config('iranian_sms.kavenegar.api_key');
-        $this->sender                = config('iranian_sms.kavenegar.sender');
+        if (is_null($account)) {
+            $this->gateway_url           = config('iranian_sms.kavenegar.gateway');
+            $this->credential['api_key'] = config('iranian_sms.kavenegar.api_key');
+            $this->sender                = config('iranian_sms.kavenegar.sender');
+        } else{
+            $this->gateway_url           = config("iranian_sms.kavenegar.{$account}.gateway");
+            $this->credential['api_key'] = config("iranian_sms.kavenegar.{$account}.api_key");
+            $this->sender                = config("iranian_sms.kavenegar.{$account}.sender");
+        }
     }
 
     public function send(string $number, string $message)

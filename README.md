@@ -1,5 +1,6 @@
 # Laravel SMS Component
 Laravel Package for dealing with Iranian SMS providers working with Laravel 5+
+Support multiple config for each provider
 
 ## Installation
 
@@ -29,9 +30,11 @@ php artisan vendor:publish --provider="Tartan\IranianSms\SmsServiceProvider" --t
     //using the default adapter
     resolve('iraniansms')->make()->send('0912xxxxxxx','this is test message');
 
-    //using kavenegar adapter
+    //using kavenegar adapter with default config
     resolve('iraniansms')->make('kavenegar')->send('0912xxxxxxx','this is test message');
 
+    //using kavenegar adapter with sender2 config
+    resolve('iraniansms')->make('kavenegar', 'sender2')->send('0912xxxxxxx','this is test message');
 
     //using Facede
     use Iraniansms;
@@ -68,6 +71,11 @@ return [
 		'gateway' => env('IRANIANSMS_KAVENEGAR_GATEWAY','http://api.kavenegar.com/v1/%s/%s/%s.json/'),
 		'api_key' => env('IRANIANSMS_KAVENEGAR_APIKEY'),
 		'sender' => env('IRANIANSMS_KAVENEGAR_SENDER'),
+        'sender2' => [
+            'gateway' => env('IRANIANSMS_KAVENEGAR_SENDER2_GATEWAY','http://api.kavenegar.com/v1/%s/%s/%s.json/'),
+		    'api_key' => env('IRANIANSMS_KAVENEGAR_SENDER2_APIKEY'),
+		    'sender' => env('IRANIANSMS_KAVENEGAR_SENDER2_SENDER'),
+        ],       
 	],
 	'smsir' => [
 		'gateway' => env('IRANIANSMS_SMSIR_GATEWAY', 'http://ip.sms.ir/SendMessage.ashx'),

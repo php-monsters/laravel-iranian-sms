@@ -8,9 +8,13 @@ class Slack extends AdapterAbstract implements AdapterInterface
 {
     public $url;
 
-    public function __construct()
+    public function __construct($account = null)
     {
-        $this->url = config('iranian_sms.slack.url');
+        if (is_null($account)) {
+            $this->url = config('iranian_sms.slack.url');
+        } else {
+            $this->url = config("iranian_sms.slack.{$account}.url");
+        }
     }
 
     public function send(string $number, string $message)
@@ -26,7 +30,7 @@ class Slack extends AdapterAbstract implements AdapterInterface
         curl_setopt($ch, CURLOPT_HEADER, array('Content-Type: application/json'));
         $data = curl_exec($ch);
 
-        if(curl_errno($ch)){
+        if (curl_errno($ch)) {
             throw new Exception(curl_error($ch));
         }
 
