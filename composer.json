@@ -22,6 +22,7 @@
         "ext-json": "*",
         "illuminate/support": ">=5.0.0",
         "ghasedak/php":"^1.0",
-        "kavenegar/php": "^1.2"
+        "kavenegar/php": "^1.2",
+        "samuraee/easycurl": "^1.0"
     }
 }

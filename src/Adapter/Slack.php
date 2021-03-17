@@ -2,8 +2,6 @@
 
 namespace Tartan\IranianSms\Adapter;
 
-use Tartan\IranianSms\Exception;
-
 class Slack extends AdapterAbstract implements AdapterInterface
 {
     public $url;
@@ -21,19 +19,25 @@ class Slack extends AdapterAbstract implements AdapterInterface
     {
         $number = $this->filterNumber($number);
 
-        $data = json_encode(['text' => "To: $number - Message: $message"]);
+        $jsonData = json_encode(['text' => "To: $number - Message: $message"]);
 
-        $ch = curl_init($this->url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HEADER, array('Content-Type: application/json'));
-        $data = curl_exec($ch);
+        $curl = $this->getCurl();
+        $curl->addHeader('Content-Type', 'application/json');
 
-        if (curl_errno($ch)) {
-            throw new Exception(curl_error($ch));
-        }
+        $curl->rawPost($this->url, $jsonData);
+    }
 
-        return $data;
+    public function Verify(string $number, int $type, string $template, ...$args)
+    {
+        $number = $this->filterNumber($number);
+
+        $jsonData = json_encode([
+            'text' => "To: {$number} - type: {$type} \n template: {$template} \n OTP: $args[0]"
+        ]);
+
+        $curl = $this->getCurl();
+        $curl->addHeader('Content-Type', 'application/json');
+
+        $curl->rawPost($this->url, $jsonData);
     }
 }

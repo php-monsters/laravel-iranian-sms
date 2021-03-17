@@ -14,4 +14,11 @@ class SmsLog extends AdapterAbstract implements AdapterInterface
 
         Log::debug($contents, ['tag' => 'sms']);
     }
+
+    public function Verify(string $number, int $type, string $template, ...$args)
+    {
+        $number = $this->filterNumber($number);
+
+        Log::debug("OTP Number: {$number} \n type: {$type} \n template: {$template} \n", $args);
+    }
 }
