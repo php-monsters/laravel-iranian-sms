@@ -34,4 +34,18 @@ class Ghasedak extends AdapterAbstract implements AdapterInterface
             $this->credential['sender']
         );
     }
+
+    public function Verify(string $number, int $type, string $template, ...$args)
+    {
+        $number = $this->filterNumber($number);
+
+        $api = new GhasedakApi($this->credential['api_key']);
+
+        return $api->Verify(
+            $number,
+            $type,
+            $template,
+            ...$args
+        );
+    }
 }

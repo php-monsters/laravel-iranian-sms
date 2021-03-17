@@ -16,12 +16,12 @@
         }
     },
     "require": {
-        "php": ">=5.4",
+        "php": ">=5.6",
         "ext-soap": "*",
         "ext-curl": "*",
         "ext-json": "*",
         "illuminate/support": ">=5.0.0",
-        "ghasedak/php":"dev-master",
-        "kavenegar/php": "*"
+        "ghasedak/php":"^1.0",
+        "kavenegar/php": "^1.2"
     }
 }
