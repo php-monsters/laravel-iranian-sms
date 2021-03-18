@@ -2,6 +2,7 @@
 
 namespace Tartan\IranianSms\Adapter;
 
+use Samuraee\EasyCurl\EasyCurl;
 use Tartan\IranianSms\Exception;
 
 abstract class AdapterAbstract {
@@ -17,4 +18,8 @@ abstract class AdapterAbstract {
 
 	}
 
+	public function getCurl(): EasyCurl
+    {
+        return new EasyCurl();
+    }
 }
